@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Iniciar Sesion</title>
+    </h:head>
+    <h:body>
+        <center>
+            
+            <f:view>
+                <h:form>
+                    <h3><h:outputText value="INICIAR SESION"/></h3>
+                    
+                    <h:panelGrid columns="2">
+                    
+                        <h:outputLabel value="ID Usuario:" for="idUsuario" />
+                        <h:inputText id="idUsuario" value="#{ahorcado.idU}" title="IDUsuario" />
+
+                        <h:outputLabel value="Nombre:" for="nombre" />
+                        <h:inputText id="nombre" value="#{ahorcado.usuario.nombre}" title="Nombre" />
+                        
+                    </h:panelGrid>
+                    <br/><br/>
+                    <h:commandButton value="Iniciar Sesion" action="#{ahorcado.validaUsuario()}"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton value="Regresar" action="menu.xhtml"></h:commandButton>
+                    <br/><br/>
+                    <h:outputLabel>"#{ahorcado.texto}"</h:outputLabel>
+                    
+                </h:form>
+            </f:view>
+        </center>
+    </h:body>
+</html>
+
