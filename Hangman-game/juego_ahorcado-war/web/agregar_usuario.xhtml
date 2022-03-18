@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agregar Usuario</title>
+    </h:head>
+    <h:body>
+        <center>
+            <f:view>
+                <h:form>
+                    <h3><h:outputText value="Agregar Usuario"/></h3>
+                    <h:panelGrid columns="2">
+                    
+                        <h:outputLabel value="Nombre:" for="nombre" />
+                        <h:inputText id="nombre" value="#{ahorcado.usuario.nombre}" title="Nombre" />
+
+                        <h:outputLabel value="Tipo Persona:" for="tpersona" />
+                        <h:selectOneMenu id="tpersona" value="#{ahorcado.usuario.tpersona}" title="Tipo">
+                            <f:selectItems value="#{ahorcado.tipos()}" var="TipoU" itemLabel="#{TipoU.desc}" itemValue="#{TipoU.gtipo}"></f:selectItems>
+                        </h:selectOneMenu>
+                    
+                    </h:panelGrid>
+                    <br/>
+                    <h:commandButton value="Guardar" actionListener="#{ahorcado.guardarUsuario()}"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton value="Regresar" action="menu.xhtml"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton value="Iniciar Sesion" action="iniciar_sesion.xhtml"></h:commandButton>
+                </h:form>
+            </f:view>
+        </center>
+    </h:body>
+</html>
+
