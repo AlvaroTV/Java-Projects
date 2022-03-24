@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../templates/leerdatos.xhtml">
+
+            <ui:define name="top">
+                <h1><h:outputText value="Registrar Usuario"/></h1>
+            </ui:define>
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+                        
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Nombre:" for="nombre" />
+                            <h:inputText id="nombre" value="#{Acceso.usuario.nombre}" title="Nombre" />
+                            <h:outputLabel value="Fechanac:" for="fechanac" />
+                            <h:inputText id="fechanac" value="#{Acceso.usuario.fechanac}" title="Fechanac" >
+                                <f:convertDateTime pattern="yyyy/MM/dd" />
+                            </h:inputText>
+                            <h:outputLabel value="Estatura(cm):" for="estatura" />
+                            <h:inputText id="estatura" value="#{Acceso.usuario.estatura}" title="Estatura" />
+                            <h:outputLabel value="Sexo:" for="sexo" />
+                            <h:inputText id="sexo" value="#{Acceso.usuario.sexo}" title="Sexo" />
+                            <h:outputLabel value="Password:" for="password" />
+                            <h:inputText id="password" value="#{Acceso.usuario.password}" title="Password" />
+                        </h:panelGrid>
+
+                        <br/><br/>
+                        <h:commandButton value="Guardar" actionListener="#{Acceso.guardarUsuario()}"></h:commandButton>
+                        <br/><br/>
+                        <h:commandButton action="iniciar_sesion.xhtml" value="Iniciar Sesión"></h:commandButton>
+                    </h:form>
+                </f:view>
+            </ui:define>
+
+            <ui:define name="bottom">
+                Torres Velasco Alvaro Eduardo
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

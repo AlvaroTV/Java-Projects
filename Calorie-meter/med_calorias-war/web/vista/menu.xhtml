@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./../templates/leerdatos.xhtml">
+
+            <ui:define name="top">
+                <h2><h:outputText value="Menu"/></h2>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <h:commandButton action="registrar_medidas.xhtml" value="Registrar Medidas"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton action="cal_indices.xhtml" value="Calcular Indices"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton action="cal_calorias.xhtml" value="Calcular calorias"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton action="estima_calorias.xhtml" value="Estimacion de calorias"></h:commandButton>
+                    <br/><br/>
+                    <h:commandButton action="iniciar_sesion.xhtml" value="Cerrar Sesion"></h:commandButton>
+                </h:form>
+            </ui:define>
+
+            <ui:define name="bottom">
+                Torres Velasco Alvaro Eduardo
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
